@@ -18,8 +18,8 @@ async function getBoardGameById(id) {
     try {
         const { rows: [boardGame] } = await client.query(`
             SELECT * FROM boardgames
-            WHERE id = $1;
-        `, [id]);
+            WHERE id = ${id};
+        `);
         return boardGame;
     } catch (error) {
         throw error;
@@ -33,9 +33,9 @@ async function createBoardGame(body) {
         const { rows: [boardGame] } = await client.query(`
 
             INSERT INTO boardgames(name, description, price, "inStock", "isPopular", "imgUrl")
-            VALUES($1, $2, $3, $4, $5, $6)
+            VALUES('${name}', '${description}', '${price}', '${inStock}', '${isPopular}', '${imgUrl}')
             RETURNING *;
-        `, [name, description, price, inStock, isPopular, imgUrl]);
+        `);
         return boardGame;
     } catch (error) {
         throw error;

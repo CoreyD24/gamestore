@@ -25,17 +25,17 @@ async function createTables() {
         price INTEGER NOT NULL,
         "inStock" BOOLEAN DEFAULT false,
         "isPopular" BOOLEAN DEFAULT false,
-        "imgUrl" VARCHAR(255) DEFAULT 'https://i.imgur.com/3J3wW9S.png'
+        "imgUrl" VARCHAR(255) DEFAULT 'https://imgur.com/gallery/0pGyHjv'
         );
         CREATE TABLE boardGames (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(255) UNIQUE NOT NULL,
-            description TEXT NOT NULL,
-            price INTEGER NOT NULL,
-            "inStock" BOOLEAN DEFAULT false,
-            "isPopular" BOOLEAN DEFAULT false,
-            "imgUrl" VARCHAR(255) DEFAULT 'https://i.imgur.com/3J3wW9S.png'
-            );
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) UNIQUE NOT NULL,
+        description TEXT NOT NULL,
+        price INTEGER NOT NULL,
+        "inStock" BOOLEAN DEFAULT false,
+        "isPopular" BOOLEAN DEFAULT false,
+        "imgUrl" VARCHAR(255) DEFAULT 'https://imgur.com/gallery/0pGyHjv'
+        );
         `);
     } catch (error) {
         throw error;
@@ -49,38 +49,38 @@ async function createInitialData() {
         await client.query(`
       INSERT INTO videoGames (name, description, price, "inStock", "isPopular", "imgUrl")
       VALUES
-        ('Final Fantasy VII', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy VIII', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy IX', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy X', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy X-2', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy XII', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy XIII', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy XIV', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy XV', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy Tactics', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy Tactics: The War of the Lions', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy Tactics Advance', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy Tactics A2: Grimoire of the Rift', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-        ('Final Fantasy Crystal Chronicles', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png')`
+        ('Final Fantasy VII', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy VIII', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy IX', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy X', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy X-2', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy XII', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy XIII', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy XIV', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy XV', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy Tactics', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy Tactics: The War of the Lions', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy Tactics Advance', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy Tactics A2: Grimoire of the Rift', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT'),
+        ('Final Fantasy Crystal Chronicles', 'The best game ever!', 100, true, true, 'https://imgur.com/t/final_fantasy/8OotqRT')`
         );
         await client.query(`
         INSERT INTO boardGames (name, description, price, "inStock", "isPopular", "imgUrl")
         VALUES
-            ('Catan', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Ticket to Ride', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Pandemic', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Codenames', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Scrabble', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Monopoly', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Clue', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Risk', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Battleship', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Sorry!', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Chess', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Checkers', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Backgammon', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png'),
-            ('Go', 'The best game ever!', 100, true, true, 'https://i.imgur.com/3J3wW9S.png')`
+            ('Catan', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Ticket to Ride', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Pandemic', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Codenames', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Scrabble', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Monopoly', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Clue', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Risk', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Battleship', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Sorry!', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Chess', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Checkers', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Backgammon', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg'),
+            ('Go', 'The best game ever!', 100, true, true, 'https://i.imgur.com/zp6NhK0.jpeg')`
         );
     } catch (error) {
         throw error;
@@ -100,5 +100,5 @@ async function rebuildDB() {
 }
 
 module.exports = {
-    rebuildDB
+    rebuildDB,
 };

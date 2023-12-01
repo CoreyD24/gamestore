@@ -20,7 +20,8 @@ router.get('/', async (req, res, next) => {
 // GET - /api/board-games/:id - get a single board game by id
 router.get('/:id', async (req, res, next) => {
     try {
-        const boardGame = await getBoardGameById(req.params.id);
+        const id = req.params.id;
+        const boardGame = await getBoardGameById(id);
         res.send(boardGame);
     } catch (error) {
         next(error);
